@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+
+@import '~@riapacheco/yutes/main.scss'; // Strips webkit / default browser styles
+@import '~@riapacheco/yutes/season/two.scss'; // Access colors
+
+html, body {
+  background-color: $midnight-dark;
+  background-image: linear-gradient(to bottom right, $gunmetal-dark, $midnight-dark);
+  background-attachment: fixed; // fixes gradient to viewport
+  color: $steel-regular; // font colors
+}
