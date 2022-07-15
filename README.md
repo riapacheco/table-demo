@@ -313,6 +313,7 @@ Now run your app, and check it out!
 One core tool we'll pull from Angular's CDK is is it's `virtual scroll` viewport. This creates a height-restricted view that only renders data that's visible in the viewport, which drastically improves performance.
 Import the CDK package from Angular by running the following in your terminal:
 ```bash
+#Terminal
 npm install @angular/cdk
 ```
 
