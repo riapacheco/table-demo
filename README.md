@@ -95,7 +95,7 @@ Once that's generated, replace the content in your `app.component.html` file wit
 </div>
 ```
 ##### @riapacheco/yutes classes
-* `mx-auto-900px` sets the width of the container to the number indicated in the class (in pixels)
+* `mx-auto-900px` sets the width of the container to the number indicated in the class (in pixels); and centers it horizontally in then view
   * This shorthand class allows you to set a width anywhere from `1px` to `3000px`
 * `pt-5` adds `5rem` [`rem` being a multiple of your base font-size] to the top of the container
 
