@@ -1,8 +1,9 @@
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
 import { DataTableComponent } from './components/data-table/data-table.component';
+import { NgModule } from '@angular/core';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { DataTableComponent } from './components/data-table/data-table.component
   ],
   imports: [
     BrowserModule,
-    CommonModule
+    CommonModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

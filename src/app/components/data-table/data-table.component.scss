@@ -1,3 +1,50 @@
-div {
+@import '~@riapacheco/yutes/season/two.scss';
+
+$column-spacing: 1rem;    // For easier updating later
+
+table { width: 100%; }    // Expands the template's parent element
+
+/* -------------------------- STRUCTURAL PROPERTIES ------------------------- */
+// STYLES APPLIED TO BOTH TABLE-ROWS
+tr {
   width: 100%;
+  height: 2.5rem;         // Emphasize the header row more
+  display: flex;          // Spread header row
+  align-items: center;    // WITHOUT losing vertical text centering
+
+  // Enclosed Cells
+  th, td {
+    cursor: pointer;
+    text-align: center;
+
+    // Solves issue of growing into parent wrappers
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 100%;
+
+    // How the $column-spacing var we created acts as "column" spacing: math.
+    margin-left: $column-spacing / 2;
+    margin-right: $column-spacing / 2;
+    &:first-child { margin-left: none; }      // Removes left margin from very left column
+    &:last-child { margin-right: none; }      // Removes right margin from very right column
+  }
+}
+
+/* --------------------------- HEADER ROW STYLING --------------------------- */
+.table-row.header {
+  background-color: $midnight-dark;   // Adds a nice darker background
+  border-radius: 6px 6px 0 0;         // Rounds the top-left and top-right corners
+
+  // Typical header styling
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.07rem;
+  color: $soot-grey-medium;
+}
+/* ---------------------------- DATA ROW STYLING ---------------------------- */
+.table-row.data {
+  &:nth-child(even) {                   // Adds BG color to every other CHILD element
+    background-color: $gunmetal-dark;
+  }
 }

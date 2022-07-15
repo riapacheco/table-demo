@@ -1,3 +1,37 @@
-<p>
-  data-table works!
-</p>
+
+<!-- ----------------------------- HEADER ROW ------------------------------ -->
+<tr class="table-row header">
+  <th>Symbol</th>
+  <th>Ask Price</th>
+  <th>Count</th>
+  <th>Bid Price</th>
+  <th>Low Price</th>
+  <th>High Price</th>
+</tr>
+
+<!-- ------------------------------ DATA ROWS ------------------------------ -->
+<table>
+  <tr
+    *ngFor="let crypto of cryptocurrencies"
+    class="table-row data">
+    <td>
+      {{ crypto.symbol | uppercase }}
+    </td>
+    <td>
+      {{ crypto.askPrice }}
+    </td>
+    <td>
+      {{ crypto.count }}
+    </td>
+    <td>
+      {{ crypto.bidPrice }}
+    </td>
+    <td>
+      {{ crypto.lowPrice}}
+    </td>
+    <td>
+      {{ crypto.highPrice}}
+    </td>
+
+  </tr>
+</table>
