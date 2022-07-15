@@ -1,4 +1,4 @@
-**Searchable / Sortable Table in Angular (No Material) with SCSS, useful Directives, custom filterAll pipes, vanilla JS, and Virtual Scrolling**
+**Searchable / Sortable Table in Angular (WITHOUT Material) using SCSS, useful Directives, custom filterAll pipes, vanilla JS, and Virtual Scrolling**
 
 [toc]
 
