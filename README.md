@@ -5,16 +5,19 @@
 # Create the App
 
 ```bash
+#Terminal
 ng new custom-table-demo --skip tests
 ```
 
 When prompted:
 
 ```bash
+#Terminal
 ? Would you like to add Angular routing? (y/N) N
 ```
 
 ```bash
+#Terminal
 ? Which stylesheet format would you like to use?
   CSS
 ❯ SCSS   [ https://sass-lang.com/documentation/syntax#scss                ]
@@ -28,12 +31,14 @@ When prompted:
 To keep this post high-level, we'll borrow my `@riapacheco/yutes` package's _utility_ classes (get it?) and access a seasonal stylesheet for colors only. We'll shape the table from scratch and add critical functionality without touching any other external libraries. This is likely a very strange concept to any React devs that might be reading this. ;)
 
 ```bash
+#Terminal
 npm install @riapacheco/yutes
 ```
 
 And in your `styles.scss` file, add the following:
 
 ```scss
+// styles.scss
 @import "~@riapacheco/yutes/main.scss"; // Strips webkit / default browser styles
 @import "~@riapacheco/yutes/season/two.scss"; // Access colors
 
@@ -55,6 +60,7 @@ body {
 Now we'll add the `CommonModule` to access directives. Add the following to your `app.module.ts` file:
 
 ```typescript
+// app.module.ts
 import { AppComponent } from "./app.component";
 import { BrowserModule } from "@angular/platform-browser";
 // Add this ⤵️
@@ -83,6 +89,7 @@ export class AppModule {}
 First, let's create a separate component so that our `app-root` acts as a wrapper. In your terminal, run the following:
 
 ```bash
+#Terminal
 ng g c components/data-table
 ```
 
