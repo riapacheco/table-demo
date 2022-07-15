@@ -340,7 +340,7 @@ export class AppModule { }
 ## Virtual Scroll Viewport
 Now we'll wrap the `table-row data` element with the `<cdk-virtual-scroll-viewport>` selector. For this to properly render, we add an `[itemSize]` value to the selector itself and specify a restricted height. 
 * The `itemSize` represents what height the feature should expect of each row
-* To specify height, we can use Angular's handy `[style]` directive. Both of these can bind values directly from the component.
+* To specify the height of the overall viewport, we can use Angular's handy `[style]` directive. Both of these can bind values directly from the component.
 First, let's add those values to the component itself:
 
 ```typescript
