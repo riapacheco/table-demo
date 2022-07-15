@@ -302,7 +302,7 @@ Now run your app, and check it out!
 
 ![header added to table](https://firebasestorage.googleapis.com/v0/b/riapi-65069.appspot.com/o/blog%2FScreen%20Shot%202022-07-14%20at%2010.15.26%20PM.png?alt=media&token=fce9d298-4747-488d-be95-30413cf4cc38)
 
-# Performance-Improving Scrolling
+# Performance-Improving Scroll Windows
 One core tool we'll pull from Angular's CDK is is it's `virtual scroll` viewport. This creates a height-restricted view that only renders data that's visible in the viewport, which drastically improves performance.
 Import the CDK package from Angular by running the following in your terminal:
 ```bash
@@ -336,3 +336,51 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 })
 export class AppModule { }
 ```
+
+## Virtual Scroll Viewport
+Now we'll wrap the `table-row data` element with the `<cdk-virtual-scroll-viewport>` selector. For this to properly render, we add an `[itemSize]` value to the selector itself and specify a restricted height. 
+* The `itemSize` represents what height the feature should expect of each row
+* To specify height, we can use Angular's handy `[style]` directive. Both of these can bind values directly from the component.
+First, let's add those values to the component itself:
+
+```typescript
+// data-table.component.ts
+
+// ... other code
+
+export class DataTableComponent implements OnInit {
+  cryptocurrencies: any = (data as any).default;
+
+  /* ------------------------ VIRTUAL SCROLL PROPERTIES ----------------------- */
+  itemSize = '2.5rem';        // Can accept pixels and ems too
+  viewportHeightPx = 500;
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}
+```
+
+And apply them to the wrapping selector in the template:
+```html
+<!-- ------------------------------ DATA ROWS ------------------------------ -->
+<table>
+
+  <!-- ⤵️ Add the viewport here with our bounded elements -->
+  <cdk-virtual-scroll-viewport 
+    [itemSize]="itemSize" 
+    [style.height]="viewportHeightPx + 'px' ">
+    
+    <tr
+      *ngFor="let crypto of cryptocurrencies"
+      class="table-row data">
+
+      <!-- ... cell code -->
+
+    </tr>
+  </cdk-virtual-scroll-viewport>
+</table>
+```
+I realize that having a local file with THAT much data might still reflect performance issues. But, it ain't too bad for what it is:

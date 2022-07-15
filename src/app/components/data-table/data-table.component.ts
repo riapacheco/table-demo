@@ -10,6 +10,10 @@ import { Component, OnInit } from '@angular/core';
 export class DataTableComponent implements OnInit {
   cryptocurrencies: any = (data as any).default;
 
+  /* ------------------------ VIRTUAL SCROLL PROPERTIES ----------------------- */
+  itemSize = '2.5rem';
+  viewportHeightPx = 500;
+
   constructor() { }
 
   ngOnInit(): void {

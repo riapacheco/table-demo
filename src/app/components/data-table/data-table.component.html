@@ -11,27 +11,28 @@
 
 <!-- ------------------------------ DATA ROWS ------------------------------ -->
 <table>
-  <tr
-    *ngFor="let crypto of cryptocurrencies"
-    class="table-row data">
-    <td>
-      {{ crypto.symbol | uppercase }}
-    </td>
-    <td>
-      {{ crypto.askPrice }}
-    </td>
-    <td>
-      {{ crypto.count }}
-    </td>
-    <td>
-      {{ crypto.bidPrice }}
-    </td>
-    <td>
-      {{ crypto.lowPrice}}
-    </td>
-    <td>
-      {{ crypto.highPrice}}
-    </td>
-
-  </tr>
+  <cdk-virtual-scroll-viewport [itemSize]="itemSize" [style.height]="viewportHeightPx + 'px' ">
+    <tr
+      *ngFor="let crypto of cryptocurrencies"
+      class="table-row data">
+      <td>
+        {{ crypto.symbol | uppercase }}
+      </td>
+      <td>
+        {{ crypto.askPrice }}
+      </td>
+      <td>
+        {{ crypto.count }}
+      </td>
+      <td>
+        {{ crypto.bidPrice }}
+      </td>
+      <td>
+        {{ crypto.lowPrice}}
+      </td>
+      <td>
+        {{ crypto.highPrice}}
+      </td>
+    </tr>
+  </cdk-virtual-scroll-viewport>
 </table>
