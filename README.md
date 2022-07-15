@@ -1,4 +1,4 @@
-# Searchable / Sortable Table in Angular using Basic Directives and JS Methods
+# Searchable / Sortable Table in Angular using Basic Directives and JS Methods (No Material or CDK)
 
 
 #### Create the App
@@ -63,6 +63,7 @@ export class AppModule { }
 ---
 
 # Create Component with Data
+### Create a Data Table Component
 First, let's create a separate component so that our `app-root` acts as a wrapper. In your terminal, run the following:
 ```bash
 ng g c components/data-table
@@ -75,10 +76,10 @@ Once that's generated, replace the content in your `app.component.html` file wit
 When you run `ng serve` this should appear in your browser:
 ![preview of data table works](https://firebasestorage.googleapis.com/v0/b/riapi-65069.appspot.com/o/Screen%20Shot%202022-07-14%20at%208.47.56%20PM.png?alt=media&token=c6b467e6-78a8-4afe-b6c2-c8cc9185b926)
 
-### Adding Data
-Since we want to work with a lot of data in this table, we'll store data in a local `json` file and import it to our component as though it were an external data source.
-1. Create a file called `data.json` in your main `app` folder and populate it with 
-2. Add the `"resolveJsonModule": true` under `compilerOptions` in your `tsconfig.ts` file like this:
+### Allow the Consumption of JSON Data
+Since we want to work with a lot of data, we'll store data in a local `json` file and import it to our component as though it were an external data source.
+1. Create a file called `data.json` in your main `app` folder and populate it with [this data](https://github.com/riapacheco/table-demo/blob/main/src/app/data.json) (pulled from Binance's open API)
+2. Add `"resolveJsonModule": true` under `compilerOptions` in your `tsconfig.ts` file like this:
 ```json
 // tsconfig.json
 {
@@ -88,4 +89,29 @@ Since we want to work with a lot of data in this table, we'll store data in a lo
   }
 }
 ```
+### Import the Data into the Component
+Now we can import the data into the component. Import the data from the file path and assign it to an initialized array called `cryptocurrencies`
+```typescript
+// data-table.component.ts
+
+// import the file like this ⤵️
+import * as data from '../../data.json';
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-data-table',
+  templateUrl: './data-table.component.html',
+  styleUrls: ['./data-table.component.scss']
+})
+export class DataTableComponent implements OnInit {
+  // Assign like this ⤵️
+  cryptocurrencies: any = (data as any).default;
+
+  constructor() { }
+  ngOnInit(): void {}
+}
+```
+> Note: this is a great way to make an "instant" blog if you ever wanted to do that
+
+
 
