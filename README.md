@@ -1,4 +1,4 @@
-**Searchable / Sortable Table in Angular (No Material or CDK) with Useful Directives, Core JS Methods, and SCSS**
+**Searchable / Sortable Table in Angular (No Material or MatSort) with Useful Directives, JS Methods, SCSS, and Virtual Scrolling**
 
 [toc]
 
@@ -206,7 +206,7 @@ Now we can add the data dynamically for each row using Angular's `*ngFor` direct
 ```
 If you run the app locally, you'll see that there's a _lotta data_ (and it looks like a mess).
 
-![lots of data](./src/assets/img/firstLoadData.gif)
+![lots of data](https://ik.imagekit.io/fuc9k9ckt2b/Blog_Post_Images/Dev_to/FirstLoadUpCryptoData_hj7Ye_DfL.gif?ik-sdk-version=javascript-1.4.3&updatedAt=1657859583914)
 
 ---
 
@@ -256,7 +256,7 @@ tr {
 ```
 The table is now taking shape!
 
-![table structuring](https://firebasestorage.googleapis.com/v0/b/riapi-65069.appspot.com/o/blog%2FScreen%20Shot%202022-07-14%20at%209.59.36%20PM.png?alt=media&token=8915cefb-a672-4f27-94e2-a9a2f332fe9e)
+![table structuring](https://firebasestorage.googleapis.com/v0/b/riapi-65069.appspot.com/o/blog%2FFirstLoadUpCryptoData.gif?alt=media&token=f83c720e-e53d-490b-bfb3-9585cea6f8d3)
 
 ## Fancy Basic Styling
 Now that we got the general structure out of the way, we'll:
@@ -303,7 +303,7 @@ Now run your app, and check it out!
 ![header added to table](https://firebasestorage.googleapis.com/v0/b/riapi-65069.appspot.com/o/blog%2FScreen%20Shot%202022-07-14%20at%2010.15.26%20PM.png?alt=media&token=fce9d298-4747-488d-be95-30413cf4cc38)
 
 # Performance-Improving Scrolling
-One core tool we'll pull from angular's CDK is is it's `virtual scroll` viewport. This creates a height-restricted view that only renders data that's visible in the viewport, which drastically improves performance.
+One core tool we'll pull from Angular's CDK is is it's `virtual scroll` viewport. This creates a height-restricted view that only renders data that's visible in the viewport, which drastically improves performance.
 Import the CDK package from Angular by running the following in your terminal:
 ```bash
 npm install @angular/cdk
@@ -335,5 +335,4 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
 ```
