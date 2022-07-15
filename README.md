@@ -206,7 +206,7 @@ Now we can add the data dynamically for each row using Angular's `*ngFor` direct
 ```
 If you run the app locally, you'll see that there's a _lotta data_ (and it looks like a mess).
 
-![lots of data](https://firebasestorage.googleapis.com/v0/b/riapi-65069.appspot.com/o/blog%2FFirstLoadUpCryptoData.gif?alt=media&token=f83c720e-e53d-490b-bfb3-9585cea6f8d3)
+![lots of data](./src/assets/img/firstLoadData.gif)
 
 ---
 
