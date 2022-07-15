@@ -25,7 +25,7 @@ When prompted:
 # Some Dependency Setup
 
 ## Utility Classes and Colors with @riapacheco/yutes
-To keep this post high-level, we'll borrow my `@riapacheco/yutes` package's utility classes (get it?) and access a seasonal stylesheet for colors only. We'll shape the table from scratch (and add functionality without touching a library).
+To keep this post high-level, we'll borrow my `@riapacheco/yutes` package's _utility_ classes (get it?) and access a seasonal stylesheet for colors only. We'll shape the table from scratch (and add functionality without touching a library).
 
 ```bash
 npm install @riapacheco/yutes
